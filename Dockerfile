@@ -10,7 +10,7 @@ WORKDIR /znatokiBot
 
 COPY --from=gradle /home/gradle/build/libs/checkPassportBot-1.0-SNAPSHOT-standalone.jar .
 
-RUN apt install ps
+RUN apt-get update && apt-get install -y --no-install-recommends procps
 
 CMD ["java", "-jar", "checkPassportBot-1.0-SNAPSHOT-standalone.jar" ]
 
