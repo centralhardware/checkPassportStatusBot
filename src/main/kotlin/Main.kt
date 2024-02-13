@@ -17,12 +17,6 @@ import org.json.JSONObject
 import java.io.File
 import java.math.BigInteger
 
-//val dataSource: DataSource = try {
-//    ClickHouseDataSource(System.getenv("CLICKHOUSE_URL"))
-//} catch (e: SQLException) {
-//    throw RuntimeException(e)
-//}
-
 fun getData(id: BigInteger): JSONObject {
     return khttp.get(" https://info.midpass.ru/api/request/${id}").jsonObject
 }
