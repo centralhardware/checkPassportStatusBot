@@ -12,5 +12,5 @@ COPY --from=gradle /home/gradle/build/libs/checkPassportBot-1.0-SNAPSHOT-standal
 
 RUN apt-get update && apt-get install -y --no-install-recommends procps
 
-CMD ["java", "-jar", "checkPassportBot-1.0-SNAPSHOT-standalone.jar" ]
+CMD ["java", "-jar", "checkPassportBot-1.0-SNAPSHOT-standalone.jar", "--add-opens java.base/java.net=ALL-UNNAMED --add-opens java.base/sun.net.www.protocol.https=ALL-UNNAMED" ]
 
